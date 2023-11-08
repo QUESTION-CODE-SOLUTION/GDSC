@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+//NcR value calculator
+int ncr(int n, int r) {
+	int ans = 1;
+	int m=n-1;
+	int q=r-1;
+	int o=n-r;
+	int p=o-1;
+	while(m>=1) {
+		n=n*m;
+		m--;
+	}
+	while(q>=1) {
+		r=r*q;
+		q--;
+	}
+	while(p>=1) {
+		o=o*p;
+		p--;
+	}
+	ans = n/(o*r);
+	return ans;
+}
+int main() {
+	int n, r;
+	cin>>n>>r;
+	int a = ncr(n,r);
+	cout<<endl<<a;
+}
